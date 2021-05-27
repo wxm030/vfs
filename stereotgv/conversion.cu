@@ -64,7 +64,7 @@ __global__ void TgvConvertKBKernel(float2* disparity,
 	X[pos].x = x0out * Z;
 	X[pos].y = y0out * Z;
 	X[pos].z = Z;
-	depth[pos] = sqrt(X[pos].x * X[pos].x + X[pos].y * X[pos].y + X[pos].z * X[pos].z);
+	depth[pos] = sqrt(X[pos].x * X[pos].x + X[pos].y * X[pos].y + X[pos].z * X[pos].z) * 20;
 	//depth[pos] = Z;
 }
 

@@ -74,7 +74,7 @@ int StereoTgv::initialize(int width, int height, float beta, float gamma,
 	int newHeight = height;
 	int newWidth = width;
 	int newStride = iAlignUp(width);
-	//std::cout << "Pyramid Sizes: " << newWidth << " " << newHeight << " " << newStride << std::endl;
+	std::cout << "Pyramid Sizes: " << newWidth << " " << newHeight << " " << newStride <<", nLevels = "<<nLevels << std::endl;
 	for (int level = 0; level < nLevels; level++) {
 		pDataSize[level] = newStride * newHeight * sizeof(float);
 		checkCudaErrors(cudaMalloc(&pI0[level], pDataSize[level]));
